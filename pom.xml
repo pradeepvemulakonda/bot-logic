@@ -62,10 +62,10 @@
                 <artifactId>heroku-maven-plugin</artifactId>
                 <version>2.0.3</version>
                 <configuration>
-                    <appName>exampledriven-springboot-dev</appName>
+                    <appName>bot-logic</appName>
                     <includeTarget>false</includeTarget>
                     <includes>
-                        <include>${basedir}/bot-logic.jar</include>
+                        <include>${basedir}/target/bot-logic.jar</include>
                     </includes>
                     <jdkVersion>1.8</jdkVersion>
                     <processTypes>
