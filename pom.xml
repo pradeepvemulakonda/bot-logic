@@ -37,6 +37,7 @@
         </dependency>
     </dependencies>
     <build>
+        <finalName>bot-logic</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -53,6 +54,30 @@
                                 <java.target>1.8</java.target>
                             </additionalProperties>
                         </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.heroku.sdk</groupId>
+                <artifactId>heroku-maven-plugin</artifactId>
+                <version>2.0.3</version>
+                <configuration>
+                    <appName>exampledriven-springboot-dev</appName>
+                    <includeTarget>false</includeTarget>
+                    <includes>
+                        <include>${basedir}/bot-logic.jar</include>
+                    </includes>
+                    <jdkVersion>1.8</jdkVersion>
+                    <processTypes>
+                        <web>java $JAVA_OPTS -jar bot-logic.jar}</web>
+                    </processTypes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
