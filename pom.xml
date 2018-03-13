@@ -65,11 +65,11 @@
                     <appName>bot-logic</appName>
                     <includeTarget>false</includeTarget>
                     <includes>
-                        <include>${basedir}/target/bot-logic.jar</include>
+                        <include>${basedir}/target/bot-logic-1.0.0.jar</include>
                     </includes>
                     <jdkVersion>1.8</jdkVersion>
                     <processTypes>
-                        <web>java $JAVA_OPTS -jar bot-logic.jar}</web>
+                        <web>java $JAVA_OPTS -jar bot-logic-1.0.0.jar}</web>
                     </processTypes>
                 </configuration>
                 <executions>
