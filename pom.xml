@@ -61,25 +61,6 @@
                 <groupId>com.heroku.sdk</groupId>
                 <artifactId>heroku-maven-plugin</artifactId>
                 <version>2.0.3</version>
-                <configuration>
-                    <appName>bot-logic</appName>
-                    <includeTarget>false</includeTarget>
-                    <includes>
-                        <include>${basedir}/target/bot-logic-1.0.0.jar</include>
-                    </includes>
-                    <jdkVersion>1.8</jdkVersion>
-                    <processTypes>
-                        <web>java $JAVA_OPTS -jar bot-logic-1.0.0.jar}</web>
-                    </processTypes>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>deploy</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
