@@ -13,13 +13,14 @@ public class Application {
 
     @RequestMapping("/message")
     @ResponseBody
-    String chat() {
+    @PostMapping
+    String chat(@RequestBody String inputData) {
         Conversation service = new Conversation("2018-02-16");
         service.setUsernameAndPassword("4f70690b-f5b5-4bce-874d-2480678b4e4b", "7Qc3Ycxodzdc");
 
         String workspaceId = "ae478b9a-7a27-4cd7-83d6-cabdefc71393";
 
-        InputData input = new InputData.Builder("Hello").build();
+        InputData input = new InputData.Builder(inputData).build();
 
         MessageOptions options = new MessageOptions.Builder(workspaceId)
                 .input(input)
