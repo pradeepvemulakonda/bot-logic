@@ -35,6 +35,11 @@
             <version>${spring.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.ibm.watson.developer_cloud</groupId>
+            <artifactId>conversation</artifactId>
+            <version>5.0.1</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>bot-logic</finalName>
