@@ -32,7 +32,7 @@ public class Application {
     @ResponseBody
     @PostMapping
     String chat(@RequestBody InputText inputData) {
-
+        System.out.println("====}" + token + "123455 " + inputData.getToken());
         if(!token.equalsIgnoreCase(inputData.getToken())) {
             throw new IllegalStateException();
         }
