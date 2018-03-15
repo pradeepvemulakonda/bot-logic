@@ -20,8 +20,8 @@ public class Application {
     @Value("${UN}")
     private String userName;
 
-    @Value("${PWD}")
-    private String password;
+    @Value("${PASSWORD}")
+    private String pwd;
 
     @Value("${WID}")
     private String workspaceId;
@@ -30,12 +30,12 @@ public class Application {
     @ResponseBody
     @PostMapping
     String chat(@RequestBody String inputData) {
-        System.out.println("----->>>>" + userName);
-        System.out.println("----->>>>" + password);
-        System.out.println("----->>>>" + workspaceId);
+        System.out.println("----->>>>u:" + userName);
+        System.out.println("----->>>>p:" + pwd);
+        System.out.println("----->>>>w:" + workspaceId);
 
         Conversation service = new Conversation("2018-02-16");
-        service.setUsernameAndPassword(userName, password);
+        service.setUsernameAndPassword(userName, pwd);
 
         InputData input = new InputData.Builder(inputData).build();
 
