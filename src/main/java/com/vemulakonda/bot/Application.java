@@ -4,6 +4,7 @@ import com.ibm.watson.developer_cloud.conversation.v1.Conversation;
 import com.ibm.watson.developer_cloud.conversation.v1.model.InputData;
 import com.ibm.watson.developer_cloud.conversation.v1.model.MessageOptions;
 import com.ibm.watson.developer_cloud.conversation.v1.model.MessageResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.HttpStatus;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Value;
 
+@Slf4j
 @Controller
 @SpringBootApplication
 public class Application {
@@ -57,7 +59,7 @@ public class Application {
 
     @ExceptionHandler
     ResponseEntity handle(Exception e) {
-        return new ResponseEntity("Opps, I need to go to the loo. Be right back.", HttpStatus.BAD_REQUEST);
+        return new ResponseEntity("Oops, I need to go to the loo. Be right back.", HttpStatus.BAD_REQUEST);
     }
 
     public static void main(String[] args) {
