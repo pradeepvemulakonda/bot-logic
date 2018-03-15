@@ -30,6 +30,10 @@ public class Application {
     @ResponseBody
     @PostMapping
     String chat(@RequestBody String inputData) {
+        System.out.println("----->>>>" + userName);
+        System.out.println("----->>>>" + password);
+        System.out.println("----->>>>" + workspaceId);
+
         Conversation service = new Conversation("2018-02-16");
         service.setUsernameAndPassword(userName, password);
 
