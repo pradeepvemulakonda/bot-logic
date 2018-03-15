@@ -57,6 +57,8 @@ public class Application {
 
     @ExceptionHandler
     ResponseEntity handle(Exception e) {
+        e.printStackTrace();
+        System.out.println("----->>>>u:" + e);
         return new ResponseEntity("Opps, I need to go to the loo. Be right back.", HttpStatus.BAD_REQUEST);
     }
 
